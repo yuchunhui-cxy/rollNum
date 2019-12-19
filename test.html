@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.inrow{font-size:0;[;font-size:12px;];*font-size:0;font-family:arial;[;letter-spacing:-3px;];*letter-spacing:normal;*word-spacing:-1px;}
+			.inrow>li,.inrow span{display:inline-block;*display:inline;*zoom:1;font-size:20px;/* letter-spacing:normal; *//* word-spacing:normal; */}
+			.dataNums{display: block;width:100%;height:100%;text-align:center;display: flex;display: -ms-flexbox; /*IE10兼容写法 */flex-flow: row;-ms-flex-direction: row; /*IE10兼容写法 */justify-content: center;-ms-flex-pack: center; /*IE10兼容写法 */}
+			.dataNums .dataOne{width:42px;height:42px;text-align: center;background: green}
+			.dataNums .dataBoc {position: relative; width: 100%; height: 100%; overflow: hidden;}
+			.dataNums .dataBoc .tt {position: absolute; top: 0;  left: 0; width: 100%;  height: 100%;}
+			.dataNums .tt span{width:100%;height: 42px;color:#ddf0ff;line-height: 48px;}
+
+
+			.left{
+				width: 0px;
+				height: 0px;
+				/*border-bottom: 100px solid blue;*/
+				border-top: 100px solid transparent;
+
+				border-left: 100px solid transparent;
+				border-right: 100px solid red;
+			}
+			.right{
+				width: 0px;
+				height: 0px;
+				/*border-bottom: 100px solid blue;*/
+				border-top: 100px solid transparent;
+
+				border-left: 100px solid black;
+				border-right: 100px solid transparent;
+			}
+
+		</style>
+		<script src="jquery-3.4.1.min.js"></script>
+		<script src="rollnum.js"></script>
+	</head>
+	<body>
+		<div id="datanum"></div>
+
+
+		<div id="div" style="display: flex;width: 400px;flex-wrap: wrap;justify-content: center;">
+			<div class="left"></div>
+			<div class="right"></div>
+			<div style="background: red;width: 50px;height: 100px;"></div>
+			<div style="background: black;width: 50px;height: 100px;"></div>
+		</div>
+
+		<script>
+            $("#datanum").rollNum({deVal:99});
+
+			document.getElementById("div").addEventListener("click",function(){
+			    c = 100
+                $("#datanum").rollNum({deVal:c});
+            })
+
+//		for(var i=0;i<10;i++){
+//   		setTimeout(function(){
+//   			console.log(i)  //10个10
+//   		},0);
+// 		}  
+
+
+//		for(let i=0;i<10;i++){
+//   		setTimeout(function(){
+//   			console.log(i)  //let解决
+//   		},0);
+// 		}
+
+			
+//	 	for(var i=0;i<10;i++){
+//   		setTimeout((function(){
+//   			console.log(i)   //立即执行函数解决
+//   		})(),0);
+// 		}
+
+//		for(var i=0;i<10;i++){
+// 			setTimeout(console.log(i),0); //由上面可知，因为console.log是一个函数，所以也是立即执行函数
+//		}
+
+//		for(let i=0;i<10;i++){
+//			(function(x){
+//				setTimeout(function(){
+//   				console.log(x)  //闭包解决
+//   			},0);
+//			})(i)
+// 		}
+
+
+//		for(var i=0;i<10;i++){
+//   		setTimeout("console.log(1)",1000);//连续的10个10
+//   		//原因在于加了双引号的console.log()不再是立即执行函数。
+//   		//setTimeout() 会判断第一个参数是否是[function]，
+//   		//如果不是，则会尝试将它当做字符串处理
+//   		//会用eval(console.log(1))
+// 		}
+		</script>
+	</body>
+</html>
