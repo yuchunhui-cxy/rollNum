@@ -6,9 +6,9 @@
         digit: '',
     };
     //新加的
-    // var oldValue = {
-    //     value:0
-    // }
+    var oldValue = {
+        value:0
+    }
     //新加的
 
     function rollNum(obj, options) {
@@ -16,23 +16,23 @@
         this.options = $.extend(defaults, options);
         this.init = function() {
             //新加的
-            // let val = oldValue.value
-            // Object.defineProperty(oldValue,"value",{
-            //     get(){
-            //         return val
-            //     },
-            //     set(newValue){
-            //         if(newValue != val){
-            //             val = newValue
-            //             var strHtml = '<ul class="' + options.className + ' inrow">'; //div下面的ul
-            //             for(var i = 0; i < newValue; i++) {
-            //                 strHtml += '<li class="dataOne "><div class="dataBoc"><div class="tt" t="38"><span class="num0">0</span> <span class="num1">1</span> <span class="num2">2</span> <span class="num3">3</span> <span class="num4">4</span><span class="num5">5</span> <span class="num6">6</span> <span class="num7">7</span> <span class="num8">8</span> <span class="num9">9</span><span class="num0">0</span> <span class="num1">1</span> <span class="num2">2</span> <span class="num3">3</span> <span class="num4">4</span><span class="num5">5</span> <span class="num6">6</span> <span class="num7">7</span> <span class="num8">8</span> <span class="num9">9</span><span class="num10">.</span></div></div></li>';
-            //             }
-            //             strHtml += '</ul>';
-            //             obj.html(strHtml);
-            //         }
-            //     }
-            // })
+            let val = oldValue.value
+            Object.defineProperty(oldValue,"value",{
+                get(){
+                    return val
+                },
+                set(newValue){
+                    if(newValue != val){
+                        val = newValue
+                        var strHtml = '<ul class="' + options.className + ' inrow">'; //div下面的ul
+                        for(var i = 0; i < newValue; i++) {
+                            strHtml += '<li class="dataOne "><div class="dataBoc"><div class="tt" t="38"><span class="num0">0</span> <span class="num1">1</span> <span class="num2">2</span> <span class="num3">3</span> <span class="num4">4</span><span class="num5">5</span> <span class="num6">6</span> <span class="num7">7</span> <span class="num8">8</span> <span class="num9">9</span><span class="num0">0</span> <span class="num1">1</span> <span class="num2">2</span> <span class="num3">3</span> <span class="num4">4</span><span class="num5">5</span> <span class="num6">6</span> <span class="num7">7</span> <span class="num8">8</span> <span class="num9">9</span><span class="num10">.</span></div></div></li>';
+                        }
+                        strHtml += '</ul>';
+                        obj.html(strHtml);
+                    }
+                }
+            })
             //新加的
             this.initHtml(obj, defaults);
         }
@@ -44,7 +44,7 @@
             var valLen = options.digit || (options.deVal + '').length; //值的长度
             var valArr = options.deVal + ''.split(); //值
             //新加的
-            // oldValue.value = valLen
+            oldValue.value = valLen
             //新加的
             if(obj.find('.' + options.className).length <= 0) {
                 for(var i = 0; i < valLen; i++) {
